@@ -16,7 +16,7 @@ public final class Logic {
     public void move(Cell source, Cell dest)
             throws FigureNotFoundException, ImpossibleMoveException, OccupiedCellException {
         int index = findBy(source);
-        if (index >= 0 && index < figures.length ) {
+        if (index >= 0 && index < figures.length) {
             Cell[] steps = figures[index].way(dest);
             if (free(steps)) {
                 figures[index] = figures[index].copy(dest);
