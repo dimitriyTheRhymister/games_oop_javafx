@@ -2,6 +2,7 @@ package ru.job4j.chess;
 
 import ru.job4j.chess.firuges.Cell;
 import ru.job4j.chess.firuges.Figure;
+
 import java.util.Arrays;
 
 public final class Logic {
@@ -15,12 +16,22 @@ public final class Logic {
     public void move(Cell source, Cell dest)
             throws FigureNotFoundException, ImpossibleMoveException, OccupiedCellException {
         int index = findBy(source);
-        Cell[] steps = figures[index].way(dest);
-        free(steps);
-        figures[index] = figures[index].copy(dest);
+        if (index >= 0 && index < figures.length ) {
+            Cell[] steps = figures[index].way(dest);
+            if (free(steps)) {
+                figures[index] = figures[index].copy(dest);
+            }
+        }
     }
 
     private boolean free(Cell[] steps) throws OccupiedCellException {
+        for (Figure f : figures) {
+            for (Cell s : steps) {
+                if (f.position().equals(s)) {
+                    throw new OccupiedCellException();
+                }
+            }
+        }
         return true;
     }
 
