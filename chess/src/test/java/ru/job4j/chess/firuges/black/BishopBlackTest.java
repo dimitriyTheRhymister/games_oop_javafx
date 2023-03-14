@@ -34,8 +34,7 @@ class BishopBlackTest {
         Cell[] arrWayRsl = bishopBlack.way(Cell.G5);
         Cell[] arrExp = {Cell.D2, Cell.E3, Cell.F4, Cell.G5};
         boolean rsl = Arrays.equals(arrWayRsl, arrExp);
-        boolean exp = true;
-        assertEquals(rsl, exp);
+        assertThat(rsl).isTrue();
     }
 
     @Test
@@ -44,8 +43,7 @@ class BishopBlackTest {
         Cell cellD = Cell.G5;
         BishopBlack bishopBlack = new BishopBlack(cellS);
         boolean rsl = bishopBlack.isDiagonal(cellS, cellD);
-        boolean exp = true;
-        assertEquals(rsl, exp);
+        assertThat(rsl).isTrue();
     }
 
     @Test
@@ -54,8 +52,7 @@ class BishopBlackTest {
         Cell cellD = Cell.C5;
         BishopBlack bishopBlack = new BishopBlack(cellS);
         boolean rsl = bishopBlack.isDiagonal(cellS, cellD);
-        boolean exp = false;
-        assertEquals(rsl, exp);
+        assertThat(rsl).isFalse();
     }
 
     @Test
