@@ -45,21 +45,4 @@ public class BishopBlack implements Figure {
     public Figure copy(Cell dest) {
         return new BishopBlack(dest);
     }
-
-    public static void main(String[] args) {
-        Cell cell = Cell.C1;
-        Cell cellD = Cell.C5;
-        BishopBlack bishopBlack = new BishopBlack(cell);
-        Cell[] way = bishopBlack.way(Cell.G5);
-        System.out.println(way[2]);
-        for (Cell c : way) {
-            System.out.println(c);
-        }
-
-        boolean rsl = bishopBlack.isDiagonal(cell, cellD);
-        System.out.println(rsl);
-
-        System.out.println(bishopBlack.position);
-
-    }
 }
