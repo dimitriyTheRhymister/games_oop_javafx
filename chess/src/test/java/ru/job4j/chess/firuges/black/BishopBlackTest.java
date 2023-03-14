@@ -63,6 +63,6 @@ class BishopBlackTest {
                     BishopBlack bishopBlack = new BishopBlack(Cell.C1);
                     bishopBlack.way(Cell.C5);
                 });
-        assertThat(exception.getMessage()).isEqualTo("Could not move by diagonal from C1 to C5");
+        assertThat(exception.getMessage()).isEqualTo("Could not move by diagonal from C1 to C5.");
     }
 }
